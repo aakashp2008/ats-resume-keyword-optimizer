@@ -1,11 +1,11 @@
 # 🤖 ATS Resume Keyword Optimizer
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.x-blue?logo=python">
-  <img src="https://img.shields.io/badge/NLP-Text%20Processing-green">
-  <img src="https://img.shields.io/badge/ATS-Keyword%20Analysis-orange">
-  <img src="https://img.shields.io/badge/Testing-Pytest-yellow">
-  <img src="https://img.shields.io/badge/Status-Completed-success">
+  <img src="https://img.shields.io/badge/Python-3.x-blue?logo=python" alt="Python">
+  <img src="https://img.shields.io/badge/NLP-Text%20Processing-green" alt="NLP">
+  <img src="https://img.shields.io/badge/ATS-Keyword%20Analysis-orange" alt="ATS">
+  <img src="https://img.shields.io/badge/Testing-Pytest-yellow" alt="Pytest">
+  <img src="https://img.shields.io/badge/Status-Completed-success" alt="Status">
 </p>
 
 <p align="center">
@@ -16,15 +16,15 @@
 
 ## 📌 Overview
 
-The **ATS Resume Keyword Optimizer** is a Python-based text analysis tool designed to help students and job seekers understand how well their resume matches a specific job description.
+**ATS Resume Keyword Optimizer** is a Python-based text analysis tool designed to help students and job seekers understand how well their resume matches a specific job description.
 
-The application extracts meaningful keywords from both documents and compares them to identify:
+The application analyzes both documents and identifies:
 
 * ✅ Matching keywords
 * ❌ Missing keywords
 * 📊 Keyword match percentage
 * 📄 Resume statistics
-* 💡 Resume improvement recommendations
+* 💡 Improvement recommendations
 * 📝 Automatically generated analysis report
 
 > **Note:** This project provides heuristic ATS-style keyword analysis. It does not reproduce the proprietary scoring algorithm of any specific Applicant Tracking System.
@@ -35,42 +35,50 @@ The application extracts meaningful keywords from both documents and compares th
 
 ![Project Demo](https://raw.githubusercontent.com/aakashp2008/ats-resume-keyword-optimizer/main/assets/demo.gif)
 
+> **Important:** The GIF must actually exist at `assets/demo.gif` in the GitHub repository for the demo to appear.
+
 ---
 
 ## ✨ Features
 
 ### 📄 Resume Analysis
 
-* Reads resume text files.
-* Normalizes resume content.
-* Extracts meaningful keywords.
-* Identifies technical skills.
+* Reads resume text files
+* Normalizes resume content
+* Extracts meaningful keywords
+* Identifies technical skills
+* Calculates basic document statistics
 
 ### 💼 Job Description Analysis
 
-* Reads job descriptions from text files.
-* Extracts relevant keywords.
-* Detects technical requirements.
+* Reads job descriptions from text files
+* Extracts relevant keywords
+* Detects technical requirements
+* Compares job requirements with resume content
 
 ### 🔍 Keyword Matching
 
-* Compares resume keywords with job requirements.
-* Identifies matched keywords.
-* Identifies missing keywords.
+* Compares resume keywords with job requirements
+* Identifies matched keywords
+* Identifies missing keywords
+* Calculates keyword coverage
 
 ### 📊 ATS Match Score
 
-Calculates a keyword alignment score based on:
+The application calculates a keyword alignment score based on:
 
 ```text
-Matched Keywords
------------------------------ × 100
-Total Job Keywords
+Match Score =
+(Matched Job Keywords / Total Job Keywords) × 100
 ```
 
 ### 💡 Recommendations
 
-The system provides suggestions based on the calculated score and missing keywords.
+The application provides suggestions based on:
+
+* Overall keyword score
+* Missing keywords
+* Resume-job alignment
 
 ### 📝 Report Generation
 
@@ -80,30 +88,31 @@ Automatically generates:
 ats_report.txt
 ```
 
-containing the complete analysis.
+The report contains the complete analysis.
 
 ### 🧪 Unit Testing
 
 The project includes automated tests for:
 
 * Perfect keyword matching
-* Partial matching
-* No matching keywords
+* Partial keyword matching
+* No keyword matching
 * Empty job descriptions
 
 ---
 
 ## 🛠️ Technologies Used
 
-| Technology          | Purpose                    |
-| ------------------- | -------------------------- |
-| Python              | Core programming language  |
-| Regular Expressions | Text normalization         |
-| Collections         | Keyword frequency analysis |
-| File Handling       | Resume/JD processing       |
-| Pytest              | Unit testing               |
-| Git                 | Version control            |
-| GitHub              | Project hosting            |
+| Technology          | Purpose                     |
+| ------------------- | --------------------------- |
+| Python              | Core programming language   |
+| Regular Expressions | Text normalization          |
+| Sets                | Keyword comparison          |
+| Dictionaries        | Structured analysis results |
+| File Handling       | Resume and JD processing    |
+| Pytest              | Unit testing                |
+| Git                 | Version control             |
+| GitHub              | Project hosting             |
 
 ---
 
@@ -113,7 +122,6 @@ The project includes automated tests for:
 ats-resume-keyword-optimizer/
 │
 ├── app.py
-│
 ├── resume_parser.py
 ├── keyword_analyzer.py
 ├── matcher.py
@@ -131,8 +139,11 @@ ats-resume-keyword-optimizer/
 │
 ├── requirements.txt
 ├── .gitignore
+├── ats_report.txt
 └── README.md
 ```
+
+> `ats_report.txt` is generated automatically when the application runs and should normally be included in `.gitignore`.
 
 ---
 
@@ -140,7 +151,7 @@ ats-resume-keyword-optimizer/
 
 ### Prerequisites
 
-Make sure Python 3.x is installed.
+Make sure **Python 3.x** is installed.
 
 Check your Python version:
 
@@ -154,7 +165,7 @@ or:
 python3 --version
 ```
 
-No external Python packages are required to run the main application.
+The main application uses Python standard-library modules, so no external packages are required to run it.
 
 ---
 
@@ -166,7 +177,7 @@ Clone the repository:
 git clone https://github.com/aakashp2008/ats-resume-keyword-optimizer.git
 ```
 
-Navigate into the project:
+Navigate to the project directory:
 
 ```bash
 cd ats-resume-keyword-optimizer
@@ -182,7 +193,9 @@ Start the application:
 python app.py
 ```
 
-You will see:
+The application will start from the terminal.
+
+Example:
 
 ```text
 =================================================================
@@ -204,17 +217,9 @@ Enter your choice:
 
 ---
 
-## 🔐 Login
-
-This project does **not require login or authentication**.
-
-It is designed as a lightweight local resume-analysis application.
-
----
-
 ## 🏠 Main Menu
 
-The application provides four options:
+The application provides four main options.
 
 ### 1️⃣ Analyze Sample Resume
 
@@ -230,11 +235,11 @@ and:
 sample_data/job_description.txt
 ```
 
-to perform an analysis.
+to perform an automatic analysis.
 
 ### 2️⃣ Analyze Custom Files
 
-Allows the user to provide their own resume and job-description text files.
+Allows users to provide their own resume and job-description text files.
 
 Example:
 
@@ -248,11 +253,19 @@ job_description.txt
 
 ### 3️⃣ View Sample Data
 
-Displays the sample resume and job description.
+Displays the sample resume and sample job description.
 
 ### 4️⃣ Exit
 
 Closes the application.
+
+---
+
+## 🔐 Login & Authentication
+
+This project does **not require login or authentication**.
+
+It is designed as a lightweight local resume-analysis application.
 
 ---
 
@@ -324,65 +337,83 @@ RECOMMENDATIONS
    corresponding skill or experience.
 
 3. Use specific technical terms instead of vague descriptions.
-
-4. Mention technologies in relevant project or work-experience
-   descriptions.
 ```
 
 ---
 
-## 🔎 Analysis
+## 🔎 Analysis Workflow
 
-The application performs the following workflow:
+The application follows this workflow:
 
 ```text
-Resume
-   │
-   ▼
-Text Normalization
-   │
-   ▼
-Keyword Extraction
-   │
-   ▼
-Job Description
-   │
-   ▼
-Keyword Extraction
-   │
-   ▼
-Keyword Matching
-   │
-   ▼
-Match Score
-   │
-   ├── Matched Keywords
-   │
-   ├── Missing Keywords
-   │
-   └── Recommendations
-   │
-   ▼
-ATS Analysis Report
+                ┌─────────────────┐
+                │     Resume      │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │ Text Processing  │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │Keyword Extraction│
+                └────────┬────────┘
+                         │
+                         │
+                ┌────────▼────────┐
+                │ Job Description  │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │Keyword Extraction│
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │ Keyword Matching │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │   Match Score    │
+                └────────┬────────┘
+                         │
+              ┌──────────┼──────────┐
+              ▼          ▼          ▼
+          Matched     Missing   Recommendations
+          Keywords    Keywords
+                         │
+                         ▼
+                ┌─────────────────┐
+                │  Analysis Report │
+                └─────────────────┘
 ```
 
 ---
 
 ## 🧠 Keyword Matching Logic
 
-The system calculates the keyword alignment using:
+The project uses set operations to compare extracted keywords.
+
+The basic calculation is:
 
 ```text
 Match Score =
 (Matched Job Keywords / Total Job Keywords) × 100
 ```
 
-For example:
+### Example
 
 ```text
 Total Job Keywords = 10
 Matched Keywords = 7
+```
 
+Therefore:
+
+```text
 Score = (7 / 10) × 100
 
 Score = 70%
@@ -392,46 +423,101 @@ Score = 70%
 
 ## 📊 Score Interpretation
 
-|     Score | Alignment |
-| --------: | --------- |
-|   80–100% | Excellent |
-|    60–79% | Good      |
-|    40–59% | Moderate  |
-| Below 40% | Low       |
+|     Score | Alignment    |
+| --------: | ------------ |
+|   80–100% | 🟢 Excellent |
+|    60–79% | 🔵 Good      |
+|    40–59% | 🟡 Moderate  |
+| Below 40% | 🔴 Low       |
 
-These categories are project-defined indicators and are **not official ATS thresholds**.
+> These categories are project-defined indicators and are **not official ATS thresholds**.
+
+---
+
+## 🔍 Matched Keywords
+
+The application displays keywords that appear in both:
+
+```text
+Resume
++
+Job Description
+```
+
+Example:
+
+```text
+✓ Python
+✓ Java
+✓ SQL
+✓ Git
+```
+
+This helps identify areas where the resume already aligns with the job.
+
+---
+
+## ❌ Missing Keywords
+
+The application also identifies keywords found in the job description but not in the resume.
+
+Example:
+
+```text
+• Docker
+• REST
+• AWS
+```
+
+These can help the user identify skills or terminology that may need attention.
+
+> Only add a missing keyword if you genuinely have the corresponding skill, knowledge, or experience.
 
 ---
 
 ## 💡 Recommendations
 
-The system can recommend:
+The system can provide recommendations such as:
 
-* Adding relevant missing technical skills
-* Using specific technical terminology
-* Mentioning technologies inside project descriptions
-* Improving alignment with job requirements
-* Prioritizing important technical skills
+* Improve keyword alignment
+* Add relevant skills when truthful
+* Use specific technical terminology
+* Mention technologies in project descriptions
+* Prioritize important technical requirements
 
-### ⚠️ Important
+---
 
-Never add a keyword to a resume simply to increase the score.
+## 📄 Generated Report
 
-Only include skills that genuinely represent your knowledge or experience.
+After analysis, the application generates:
+
+```text
+ats_report.txt
+```
+
+The report contains:
+
+* 📊 Match score
+* 📈 Alignment level
+* ✅ Matched keywords
+* ❌ Missing keywords
+* 📄 Document information
+* 💡 Recommendations
+* 🕒 Report generation timestamp
 
 ---
 
 ## 🧪 Testing
 
-The project includes unit tests using Pytest.
+The project includes unit tests using **Pytest**.
 
-Install Pytest if needed:
+Install Pytest:
 
 ```bash
 pip install pytest
 ```
 
-Run:
+Run the tests:
 
 ```bash
 pytest
@@ -501,45 +587,26 @@ Expected:
 
 ---
 
-## 📄 Generated Report
-
-After analysis, the application creates:
-
-```text
-ats_report.txt
-```
-
-The report contains:
-
-* Match score
-* Alignment level
-* Matched keywords
-* Missing keywords
-* Document statistics
-* Recommendations
-* Analysis notes
-
----
-
 ## 🧩 Concepts Demonstrated
 
 This project demonstrates practical knowledge of:
 
 * Python programming
+* Modular programming
 * Functions
 * Sets
 * Dictionaries
 * File handling
 * Regular expressions
-* Text normalization
 * String processing
+* Text normalization
 * Keyword extraction
-* Set operations
+* Set intersection
+* Set difference
 * Data analysis
-* Automated testing
-* Modular programming
-* Report generation
 * Error handling
+* Automated testing
+* Report generation
 
 ---
 
@@ -550,26 +617,30 @@ The main objectives are:
 1. Analyze resume content programmatically.
 2. Extract relevant job-description keywords.
 3. Compare resume and job requirements.
-4. Identify missing keywords.
-5. Calculate a measurable alignment score.
-6. Generate useful recommendations.
-7. Produce an automated analysis report.
-8. Practice software modularization and testing.
+4. Identify matching keywords.
+5. Identify missing keywords.
+6. Calculate a measurable alignment score.
+7. Generate improvement recommendations.
+8. Produce an automated report.
+9. Practice modular software development.
+10. Implement basic automated testing.
 
 ---
 
 ## 🎓 Learning Outcomes
 
-After completing this project, you can understand how to:
+Through this project, the developer gains experience in:
 
-* Process unstructured text using Python.
-* Build a basic NLP-style keyword analyzer.
-* Compare two text documents.
-* Use sets for efficient matching.
-* Build modular Python applications.
-* Create automated tests.
-* Generate structured reports.
-* Design a practical developer-focused tool.
+* Processing unstructured text using Python
+* Building rule-based NLP-style applications
+* Comparing two text documents
+* Using sets for efficient keyword matching
+* Working with regular expressions
+* Building modular Python applications
+* Writing unit tests
+* Generating structured reports
+* Handling file-related errors
+* Solving a practical real-world problem
 
 ---
 
@@ -577,11 +648,17 @@ After completing this project, you can understand how to:
 
 This project runs locally and does not require uploading resumes to an external server.
 
-For public GitHub repositories:
+### ⚠️ Public Repository Safety
 
-> ⚠️ Do not upload your real resume if it contains private information such as your phone number, personal email, home address, or other sensitive details.
+Do not upload a real resume containing:
 
-Use a sample or sanitized resume instead.
+* Personal phone number
+* Personal email address
+* Home address
+* Government ID numbers
+* Other sensitive information
+
+Use a sample or sanitized resume for the public GitHub repository.
 
 ---
 
@@ -589,25 +666,25 @@ Use a sample or sanitized resume instead.
 
 This project currently uses rule-based keyword analysis.
 
-It does not:
+It does **not**:
 
 * Reproduce proprietary ATS algorithms
-* Understand every semantic relationship between skills
-* Evaluate resume formatting
-* Parse PDF/DOCX files directly
-* Understand candidate experience depth
-* Determine whether a candidate actually possesses a skill
 * Guarantee ATS screening success
+* Fully understand semantic relationships
+* Evaluate resume formatting
+* Parse PDF files directly
+* Parse DOCX files directly
+* Evaluate the depth of candidate experience
+* Verify whether a candidate genuinely possesses a skill
+* Predict whether a company will shortlist a candidate
 
-The match score should therefore be treated as a **guideline**, not a hiring prediction.
+Therefore, the score should be treated as a **guideline rather than a hiring prediction**.
 
 ---
 
 ## 🚀 Future Enhancements
 
-Possible improvements include:
-
-### 📄 PDF Resume Support
+### 📄 1. PDF Resume Support
 
 Add PDF parsing using libraries such as:
 
@@ -616,25 +693,26 @@ PyMuPDF
 pdfplumber
 ```
 
-### 📝 DOCX Support
+### 📝 2. DOCX Resume Support
 
 Add Microsoft Word resume parsing.
 
-### 🤖 NLP-Based Similarity
+### 🤖 3. Advanced NLP
 
-Use:
+Implement:
 
 ```text
 TF-IDF
 Cosine Similarity
 Sentence Transformers
+Named Entity Recognition
 ```
 
-to measure semantic similarity.
+to improve semantic matching.
 
-### 🌐 Web Interface
+### 🌐 4. Web Interface
 
-Build a frontend using:
+Build a browser-based interface using:
 
 ```text
 HTML
@@ -648,7 +726,7 @@ or:
 Streamlit
 ```
 
-### ⚡ FastAPI Backend
+### ⚡ 5. FastAPI Backend
 
 Convert the application into a REST API.
 
@@ -660,31 +738,45 @@ GET /health
 GET /report
 ```
 
-### 📊 Dashboard
+### 📊 6. Interactive Dashboard
 
 Display:
 
-* Match score
+* ATS score
 * Skill coverage
+* Matched skills
 * Missing skills
 * Keyword frequency
 * Recommendations
+* Comparison charts
 
-### ☁️ Deployment
+### ☁️ 7. Cloud Deployment
 
-Deploy the application using a cloud platform.
+Deploy the application to a cloud platform.
 
-### 🔐 Authentication
+### 🔐 8. Authentication
 
-Add user accounts and secure resume storage.
+Add secure user accounts and resume management.
+
+### 🗄️ 9. Database Integration
+
+Store:
+
+* Resumes
+* Job descriptions
+* Analysis history
+* Scores
+* Recommendations
+
+using SQLite, PostgreSQL, or another database.
 
 ---
 
 ## 💼 Why This Project?
 
-This project is more than a basic Python CRUD application.
+This project goes beyond a basic beginner-level CRUD application.
 
-It demonstrates a combination of:
+It combines:
 
 ```text
 Python
@@ -700,33 +792,51 @@ Software Testing
 Real-World Problem Solving
 ```
 
-It is especially useful for demonstrating practical development skills during:
+It can demonstrate practical development skills for:
 
-* Software Engineering internships
-* Python internships
-* Data/AI internships
-* Placement preparation
-* Resume projects
-* Technical interviews
+* 💻 Software Engineering internships
+* 🐍 Python internships
+* 🤖 AI/ML internships
+* 📊 Data-related internships
+* 🎓 College projects
+* 💼 Placement preparation
+* 🧑‍💻 Technical interviews
 
 ---
 
 ## 📌 Resume Project Description
 
-You can describe the project on your resume as:
+You can add this project to your resume as:
 
 > **ATS Resume Keyword Optimizer** — Developed a Python-based ATS-style resume analysis tool that extracts and compares resume and job-description keywords, calculates keyword alignment scores, identifies missing skills, and generates automated improvement reports with unit-tested matching logic.
 
 ---
 
+## 🏆 Key Highlights
+
+```text
+✓ Modular Python Architecture
+✓ Rule-Based NLP
+✓ Keyword Extraction
+✓ Set-Based Matching
+✓ ATS-Style Scoring
+✓ Automated Recommendations
+✓ Report Generation
+✓ Unit Testing
+✓ Local File Processing
+✓ Real-World Career Application
+```
+
+---
+
 ## 🧑‍💻 Author
 
-**AAKASH P**
+### AAKASH P
 
-B.Tech Information Technology Student
-Panimalar Engineering College
+**B.Tech Information Technology Student**
+**Panimalar Engineering College**
 
-### Skills
+### Technical Skills
 
 ```text
 Python | Java | C | SQL | DSA | AI/ML | Git | GitHub
@@ -736,11 +846,11 @@ Python | Java | C | SQL | DSA | AI/ML | Git | GitHub
 
 ## 🔗 GitHub
 
-**GitHub Profile**
+### GitHub Profile
 
 https://github.com/aakashp2008
 
-**Project Repository**
+### Project Repository
 
 https://github.com/aakashp2008/ats-resume-keyword-optimizer
 
@@ -759,12 +869,16 @@ If you find this project useful:
 
 ## 📜 License
 
-This project is intended for educational and portfolio purposes.
+This project is intended for educational, learning, and portfolio purposes.
 
-You may modify and extend the project for learning and development.
+You are free to modify and extend the project for learning and development.
 
 ---
 
 <p align="center">
-  Made with ❤️ using Python
+  <b>Made with ❤️ using Python</b>
+</p>
+
+<p align="center">
+  <i>Building practical projects, one step at a time.</i>
 </p>
